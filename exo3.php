@@ -7,5 +7,18 @@
 // Afficher
 //----------------------------------------------------------------------------------------------------------------------
 
+//je me connect à ma bdd
+$pdo = new PDO('mysql:host=mysql;dbname=cataloguedépartementfr;host=127.0.0.1', 'root', '', [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
 
+//Crée une requette pour indicquer la selection
+
+$pdostat = $pdo->query("SELECT * FROM departement" );
+
+//J'affiche
+while ($donnee = $pdostat->fetch()){
+    echo $donnee['departement_code'];
+    echo $donnee['departement_nom'];
+}
 ?>
