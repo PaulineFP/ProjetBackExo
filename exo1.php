@@ -4,10 +4,8 @@
 
 // je crée ma bdd
 // je me connecte a ma bdd
-//je crée une variable
-// je prépare les selections de ma table
-//j'éxecute
-// j'affiche
+//j'indique quel selection prendre
+// je lui demande quoi afficher
 //---------------------------------------------------------------
 
 // je me conecte a ma bdd
