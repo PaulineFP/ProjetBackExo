@@ -16,7 +16,7 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguedépartementfr;host=127.0.0.1',
 
 // je crée ma requette
 
-$pdostat = $pdo->query("SELECT * FROM  departement ");
+$pdostat = $pdo->query("SELECT * FROM  departement ORDER BY  DESC ");
 
 //j'affiche
 while ($donne = $pdostat ->fetch())
