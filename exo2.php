@@ -14,11 +14,15 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguevillesfr;host=127.0.0.1', 'root
 
 // je crée une requette
 
-$pdostat = $pdo->query( "SELECT * FROM villes_france_free" );
+$pdostat = $pdo->query("SELECT * FROM villes_france_free" );
 
 //j'affiche
 
-
+while ($donnee = $pdostat->fetch())
+{
+   echo $donnee['ville_nom'];
+   echo $donnee['ville_surface'];
+}
 
 
 
