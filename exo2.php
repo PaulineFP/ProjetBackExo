@@ -12,9 +12,10 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguevillesfr;host=127.0.0.1', 'root
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-// je crée une requette
+// je crée une requette en lui demandant de ranger dans en ordre de surface décroissant.
 
-$pdostat = $pdo->query("SELECT * FROM villes_france_free" );
+$pdostat = $pdo->query("SELECT * FROM villes_france_free ORDER BY ville_surface DESC " );
+
 
 //j'affiche
 
