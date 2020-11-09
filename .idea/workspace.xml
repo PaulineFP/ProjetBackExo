@@ -5,7 +5,7 @@
       <change afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercicephp/exopays.php" beforeDir="false" afterPath="$PROJECT_DIR$/../exercicephp/exopays.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exo4.php" beforeDir="false" afterPath="$PROJECT_DIR$/exo4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exo5.php" beforeDir="false" afterPath="$PROJECT_DIR$/exo5.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604658259779</updated>
       <workItem from="1604658261491" duration="8110000" />
-      <workItem from="1604908757159" duration="8313000" />
+      <workItem from="1604908757159" duration="9333000" />
     </task>
     <servers />
   </component>
