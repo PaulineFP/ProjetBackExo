@@ -12,9 +12,9 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguedépartementfr;host=127.0.0.1',
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-//Crée une requette pour indicquer la selection
+//Crée une requette pour indicquer la selection en indiquand la condition puis l'ordre d'affichage
 
-$pdostat = $pdo->query("SELECT * FROM departement" );
+$pdostat = $pdo->query("SELECT * FROM departement where departement_code >=970 Order By departement_code " );
 
 //J'affiche
 while ($donnee = $pdostat->fetch()){

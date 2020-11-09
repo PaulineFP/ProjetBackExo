@@ -4,7 +4,6 @@
     <list default="true" id="00f5ffb1-6e65-47ab-ad81-fc10bce1786f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercicephp/exopays.php" beforeDir="false" afterPath="$PROJECT_DIR$/../exercicephp/exopays.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exo3.php" beforeDir="false" afterPath="$PROJECT_DIR$/exo3.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604658259779</updated>
       <workItem from="1604658261491" duration="8110000" />
-      <workItem from="1604908757159" duration="6019000" />
+      <workItem from="1604908757159" duration="6629000" />
     </task>
     <servers />
   </component>
