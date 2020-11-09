@@ -15,27 +15,22 @@ $pdo = new PDO('mysql:host=mysql;dbname=ex1;host=127.0.0.1', 'root', '', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-// je crée mes varriables
-$contry = $_POST('villes');
-$inhabitant = $_POST ('habitant');
-
-//j'indique ma base de donnée
-
-$pdo = "INSERT INTO ('Villes','habitant') VALUE ('Villes')";
 
 
+//je lui ou aller (requete)
 
-//je prépare les séléctions de ma table
-$pdo = ("SELECT * FROM villes");
+$pdoStat = $pdo-> query("SELECT * FROM villes ");
 
-//j'éxécute
-$pdo-> execute;
 
 
 //pour chaque villes affiche moi les habitants qui lui corresponde.
-foreach ($villes as $Ville){
-    echo "yes";
+while ($donnees = $pdoStat->fetch())
+{
+    echo $donnees['Villes'];
+    echo $donnees['habitants'];
 }
+
+$pdoStat->closeCursor();
 ?>
 
 
