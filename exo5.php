@@ -22,11 +22,21 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguevillesfr;host=127.0.0.1', 'root
 $pdostat = $pdo->query("SELECT * FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement ORDER BY departement_code ");
 
 
+$pdostat -> execute();
+
+
+
+//calculer pour chaque département le nombre de ligne ou il apparait
+$result = $pdo->query("SELECT departement_code COUNT ville_departement FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement GROUP BY departement_nom");
+
 //j'affiche
-while ($donnee = $pdostat ->fetch())
+
+while ($donnee = $result ->fetch())
 {
     echo $donnee['departement_code'];
     echo $donnee['departement_nom'];
-    echo $donnee['ville_nom'];
+
 }
+
 ?>
+

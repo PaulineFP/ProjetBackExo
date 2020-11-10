@@ -5,7 +5,6 @@
       <change afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercicephp/exopays.php" beforeDir="false" afterPath="$PROJECT_DIR$/../exercicephp/exopays.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exo1.php" beforeDir="false" afterPath="$PROJECT_DIR$/exo1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exo5.php" beforeDir="false" afterPath="$PROJECT_DIR$/exo5.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
       <updated>1604658259779</updated>
       <workItem from="1604658261491" duration="8110000" />
       <workItem from="1604908757159" duration="16254000" />
-      <workItem from="1604997388648" duration="2155000" />
+      <workItem from="1604997388648" duration="6223000" />
     </task>
     <servers />
   </component>
