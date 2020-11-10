@@ -25,18 +25,20 @@ $pdostat = $pdo->query("SELECT * FROM villes_france_free LEFT JOIN departement O
 $pdostat -> execute();
 
 
+// préparer le calcule pour chaque département le nombre de ligne ou il apparait
+$result = $pdo->prepare("SELECT COUNT(ville_departement) FROM villes_france_free GROUP BY ville_departement");
 
-//calculer pour chaque département le nombre de ligne ou il apparait
-$result = $pdo->query("SELECT departement_code COUNT ville_departement FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement GROUP BY departement_nom");
+$result -> execute();
 
-//j'affiche
-
-while ($donnee = $result ->fetch())
-{
-    echo $donnee['departement_code'];
-    echo $donnee['departement_nom'];
-
-}
 
 ?>
 
+<!-- Boucle pour les communes -->
+
+<?php while ($donnee = $result->fetch()): ?>
+
+<p>Nom du département : <?= $donnee['departement_nom'] ?></p>
+<p>Code du département : <?= $donnee['departement_code'] ?> </p>
+<p>Nombre de commune : <?= $donnee['ville_commune'] ?> </p>
+
+<?php endwhile; ?>
