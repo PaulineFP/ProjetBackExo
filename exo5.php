@@ -3,25 +3,30 @@
 en triant afin d’obtenir en priorité les départements qui possèdent le plus de communes*/
 
 //je me connecte a ma bdd
+//faire une jointure de table pour cummuler les donées
 //je crée une requete pour indicquer l action pour les selection
+// calculer le nombre de comunes dans chaque département
 // je tris
 //j'affiche
 //---------------------------------------------------------------------------
 
 
 //je me connect à ma bdd
-$pdo = new PDO('mysql:host=mysql;dbname=cataloguedépartementfr;host=127.0.0.1', 'root', '', [
+$pdo = new PDO('mysql:host=mysql;dbname=cataloguevillesfr;host=127.0.0.1', 'root', '', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-// je crée ma requette
+// je crée ma requette et je lui indique de réunir les 2 table (SELECT * FROM table1 LEFT JOIN table2 ON table1.id= table2.id)
+//https://sql.sh/cours/jointures/left-join ; https://www.youtube.com/watch?v=q_mFXGlNPLU
 
-$pdostat = $pdo->query("SELECT * FROM  departement ORDER BY  DESC ");
+$pdostat = $pdo->query("SELECT * FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement ORDER BY departement_code ");
+
 
 //j'affiche
-while ($donne = $pdostat ->fetch())
+while ($donnee = $pdostat ->fetch())
 {
-    echo $donne['departement_code'];
-    echo $donne['deparetement_nom'];
+    echo $donnee['departement_code'];
+    echo $donnee['departement_nom'];
+    echo $donnee['ville_nom'];
 }
 ?>
