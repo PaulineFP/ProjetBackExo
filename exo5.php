@@ -16,29 +16,20 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguevillesfr;host=127.0.0.1', 'root
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-// je crée ma requette et je lui indique de réunir les 2 table (SELECT * FROM table1 LEFT JOIN table2 ON table1.id= table2.id)
-//https://sql.sh/cours/jointures/left-join ; https://www.youtube.com/watch?v=q_mFXGlNPLU
+/* je crée ma requette et je lui indique de :
 
-$pdostat = $pdo->query("SELECT * FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement ORDER BY departement_code ");
+- calculler le nombre de ligne avec le meme departement
+-réunir les 2 table (SELECT * FROM table1 LEFT JOIN table2 ON table1.id= table2.id)
+- regrouper par département
+- par ordre de numéro de département
 
+*/
+$pdostat = $pdo->query("SELECT departement_nom, ville_departement, COUNT(*) AS nbr_items FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement GROUP BY ville_departement ORDER BY nbr_items DESC");
 
-$pdostat -> execute();
-
-
-// préparer le calcule pour chaque département le nombre de ligne ou il apparait
-$result = $pdo->prepare("SELECT COUNT(ville_departement) FROM villes_france_free GROUP BY ville_departement");
-
-$result -> execute();
-
-
+while ($donnee = $pdostat->fetch())
+{
+    echo $donnee['ville_departement'];
+    echo $donnee['departement_nom'];
+}
 ?>
 
-<!-- Boucle pour les communes -->
-
-<?php while ($donnee = $result->fetch()): ?>
-
-<p>Nom du département : <?= $donnee['departement_nom'] ?></p>
-<p>Code du département : <?= $donnee['departement_code'] ?> </p>
-<p>Nombre de commune : <?= $donnee['ville_commune'] ?> </p>
-
-<?php endwhile; ?>
