@@ -26,10 +26,16 @@ $pdo = new PDO('mysql:host=mysql;dbname=cataloguevillesfr;host=127.0.0.1', 'root
 */
 $pdostat = $pdo->query("SELECT departement_nom, ville_departement, COUNT(*) AS nbr_items FROM villes_france_free LEFT JOIN departement ON departement_code = ville_departement GROUP BY ville_departement ORDER BY nbr_items DESC");
 
-while ($donnee = $pdostat->fetch())
-{
-    echo $donnee['ville_departement'];
-    echo $donnee['departement_nom'];
-}
+
 ?>
 
+<?php
+
+while ($donnee = $pdostat->fetch())
+
+{
+    echo '<p> Le '. $donnee['ville_departement'] .' du département '. $donnee['departement_nom'].' a '.$donnee ['nbr_items'].' communes.</p>';
+}
+
+$pdostat->closeCursor();
+?>
